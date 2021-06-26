@@ -28,3 +28,21 @@ private:
     }
 };
 ```
+```cpp
+// cpp: Iterator
+class Solution {
+public:
+    vector<vector<int>> subsets(vector<int>& nums) {
+        vector<vector<int>> subs{{}};
+        
+        for(auto& num : nums){
+            int n = subs.size();
+            for(int i = 0; i < n; i++){
+                subs.emplace_back(subs[i]);
+                subs.back().emplace_back(num);
+            }
+        }
+        return subs;
+    }
+};
+```
