@@ -62,5 +62,26 @@ private:
 ```cpp
 // 迭代
 // 用一个stack实现
-// 根处理完之后，根
+// 根处理完之后，根的孩子节点要从左到右依次处理，所以在入栈的时候，根的孩子要从右到左依次入栈
+class Solution {
+public:
+    vector<int> preorder(Node* root) {
+        if(root == nullptr){
+            return {};
+        }
+        vector<int> result;
+        stack<Node*> sta;
+        sta.emplace(root);
+        while(!sta.empty()){
+            auto node = sta.top();
+            sta.pop();
+            result.emplace_back(node->val);
+            // 
+            for(int i = node->children.size()-1; i >= 0; i --){
+                sta.emplace(node->children[i]);
+            }
+        }
+        return result;
+    }
+};
 ```
