@@ -21,7 +21,7 @@
 输入：root = [1,2]
 输出：[1,2]
 ```
-### 解题思路
+### 解题思路一
 + 用先序访问实现
 
 ### 代码
@@ -116,3 +116,6 @@ private:
 // Codec ser, deser;
 // TreeNode* ans = deser.deserialize(ser.serialize(root));
 ```
+### 解题思路二
++ 也可以访问树，得到树的前序和中序的遍历结果，
++ 从前序和中序的遍历结构构造树，参考题105
