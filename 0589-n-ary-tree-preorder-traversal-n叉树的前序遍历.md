@@ -76,7 +76,7 @@ public:
             auto node = sta.top();
             sta.pop();
             result.emplace_back(node->val);
-            // 
+            // 孩子节点从右到左入栈
             for(int i = node->children.size()-1; i >= 0; i --){
                 sta.emplace(node->children[i]);
             }
