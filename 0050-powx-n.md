@@ -31,7 +31,7 @@ Constraints:
 + T(n) = O(logn)
 
 #### Note:
-+ 注意越界，所有将n定义为long long类型
++ 注意越界，所以将n定义为long long类型
 ```cpp
 // 递归
 class Solution {
